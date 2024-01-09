@@ -5,31 +5,100 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="566" Width="332">
-    <Grid Margin="0,0,0,-42" HorizontalAlignment="Center" Width="332">
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="252,10,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="172,10,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="92,10,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="10,10,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="252,89,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="172,89,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="92,89,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="10,89,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="252,170,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="172,170,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="92,170,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="10,170,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="252,243,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="172,243,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="92,243,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="10,243,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="252,322,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="172,322,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="92,322,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="10,322,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="252,403,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="172,403,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="92,403,0,0" VerticalAlignment="Top" Width="66"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="63" Margin="10,403,0,0" VerticalAlignment="Top" Width="66"/>
+        Title="MainWindow" Height="526" Width="358">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,0,4" HorizontalAlignment="Center" Width="346">
+        <Button Content="%" HorizontalAlignment="Left" Height="43" Margin="10,107,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_1" Background="#FF949494"/>
+        <Button Content="CE" HorizontalAlignment="Left" Height="43" Margin="100,107,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" Click="Button_Click_4"/>
+        <Button Content="C" HorizontalAlignment="Left" Height="43" Margin="191,107,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" Click="Button_Click_5"/>
+        <Button Content="1/X&#xD;&#xA;" HorizontalAlignment="Left" Height="43" Margin="10,169,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" Click="Button_Click_7"/>
+        <Button Content="x^2" HorizontalAlignment="Left" Height="43" Margin="100,169,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" Click="Button_Click_8"/>
+        <Button Content="2Vx" HorizontalAlignment="Left" Height="43" Margin="191,169,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_3" Background="#FF949494"/>
+        <Button Content="7" HorizontalAlignment="Left" Height="43" Margin="10,235,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_9"/>
+        <Button Content="8" HorizontalAlignment="Left" Height="43" Margin="100,235,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_10"/>
+        <Button Content="9" HorizontalAlignment="Left" Height="43" Margin="191,235,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_11"/>
+        <Button Content="6" HorizontalAlignment="Left" Height="43" Margin="191,304,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_15"/>
+        <Button Content="5" HorizontalAlignment="Left" Height="43" Margin="100,304,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_14"/>
+        <Button Content="4" HorizontalAlignment="Left" Height="43" Margin="10,304,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_13"/>
+        <Button Content="3" HorizontalAlignment="Left" Height="43" Margin="191,366,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="2" HorizontalAlignment="Left" Height="43" Margin="100,366,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="1" HorizontalAlignment="Left" Height="43" Margin="10,366,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_1">
+            <Button.BindingGroup>
+                <BindingGroup/>
+            </Button.BindingGroup>
+        </Button>
+        <Button Content="+/-" HorizontalAlignment="Left" Height="43" Margin="10,432,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="0" HorizontalAlignment="Left" Height="43" Margin="100,432,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="," HorizontalAlignment="Left" Height="43" Margin="191,432,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="&lt;-&#xD;&#xA;" HorizontalAlignment="Left" Height="43" Margin="275,107,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" Click="Button_Click_6"/>
+        <Button Content="Děleno" HorizontalAlignment="Left" Height="43" Margin="275,169,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click_2" Background="#FF949494"/>
+        <Button Content="X" HorizontalAlignment="Left" Height="43" Margin="275,235,0,0" VerticalAlignment="Top" Width="66" BorderBrush="#FF5F5F5F" Background="#FF949494" Click="Button_Click_12"/>
+        <Button Content="-" HorizontalAlignment="Left" Height="43" Margin="275,304,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" BorderBrush="#FF5F5F5F"/>
+        <Button Content="+" HorizontalAlignment="Left" Height="43" Margin="275,366,0,0" VerticalAlignment="Top" Width="66" Background="#FF949494" BorderBrush="#FF5F5F5F"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Content="=" HorizontalAlignment="Left" Height="43" Margin="275,432,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="2.1,0.352">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F2F7" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Center" Height="82" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Name="label"><Run/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>
