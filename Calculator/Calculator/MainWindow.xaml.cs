@@ -25,134 +25,120 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void stisk(object sender, RoutedEventArgs e)
+        {
+               
+        }
+
+        private void tlacitko_percent(object sender, RoutedEventArgs e)
+        {
+            label.Text += "%";
+        }
+
+        private void tlacitko_CE_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text = "";
+        }
+
+        private void tlacitko_C_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text = "";
+        }
+
+        private void tlacitko_backspace_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void procent(object sender, RoutedEventArgs e)
+        private void tlacitko_lomenoX_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tlacitko_nadruhou_Click(object sender, RoutedEventArgs e)
         {
             
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void tlacitko_odmocnina_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void CE(object sender, RoutedEventArgs e)
+        private void tlacitko_deleno_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Frame_Navigated(object sender, NavigationEventArgs e)
+        private void tlacitko_0_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "0" ;
+        }
+        private void tlacitko_1_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "1";
+        }
+        private void tlacitko_2_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "2";
+        }
+        private void tlacitko_3_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "3";
+        }
+        private void tlacitko_4_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "4";
+        }
+        private void tlacitko_5_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "5";
+        }
+        private void tlacitko_6_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "6";
+        }
+        private void tlacitko_7_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "7";
+        }
+        private void tlacitko_8_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "8";
+        }
+        private void tlacitko_9_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += "9";
+        }
+
+        private void tlacitko_prehozeni_plus_minus_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text = "-" + label.Text;
+        }
+
+        private void tlacitko_carka_Click(object sender, RoutedEventArgs e)
+        {
+            label.Text += ",";
+        }
+
+        private void tlacitko_rovnase_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void tlacitko_plus_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void C(object sender, RoutedEventArgs e)
+        private void tlacitko_minus_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Smazat(object sender, RoutedEventArgs e)
+        private void tlacitko_krat_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-        private void Button_Click_7(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_8(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_9(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_10(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_11(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_12(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_13(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_14(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_15(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_16(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_17(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_18(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_19(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_20(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_21(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_22(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_23(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void stisk(object sender, RoutedEventArgs e)
-        {
-               
         }
     }
 }
